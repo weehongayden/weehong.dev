@@ -70,7 +70,7 @@ const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
                           router.asPath === url.href
                             ? "text-yellow-600 font-medium"
                             : "border-transparent text-gray-500",
-                          "inline-flex items-center px-1 pt-1 text-sm hover:text-yellow-600"
+                          "inline-flex items-center px-1 pt-1 text-sm hover:text-yellow-700"
                         )}
                       >
                         {url.name}
@@ -134,7 +134,7 @@ const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
                       router.asPath === url.href
                         ? "text-yellow-600 font-medium"
                         : "border-transparent text-gray-500",
-                      "block pl-3 pr-4 py-2 text-base font-base hover:text-yellow-600"
+                      "block pl-3 pr-4 py-2 text-base font-base hover:text-yellow-700"
                     )}
                   >
                     {url.name}
