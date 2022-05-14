@@ -49,7 +49,7 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
-        <div className="w-[80px] sm:w-[176px] relative mx-auto mb-8 sm:ml-auto sm:mr-0 sm:my-auto">
+        <div className="w-[176px] relative mx-auto mb-8 sm:ml-auto sm:mr-0 sm:my-auto">
           <Image
             alt="WeeHong KOH"
             height={176}
