@@ -19,7 +19,7 @@ const Home: NextPage = () => {
           <h3 className="text-gray-700 text-2xl my-4 text-center sm:text-left">
             Enjoy developing web application and automating trivia stuff
           </h3>
-          <div className="flex mt-5">
+          <div className="flex mt-5 justify-center sm:justify-start">
             <Link href="https://github.com/WeeHong/">
               <a
                 className="text-amber-600 text-lg mr-5 hover:text-amber-700"
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
-        <div className="w-[80px] sm:w-[176px] relative sm:mb-0 mx-auto sm:mb-8">
+        <div className="w-[80px] sm:w-[176px] relative mx-auto mb-8 sm:ml-auto sm:mr-0 sm:my-auto">
           <Image
             alt="WeeHong KOH"
             height={176}
