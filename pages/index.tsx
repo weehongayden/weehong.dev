@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           <div className="flex mt-5 justify-center sm:justify-start">
             <Link href="https://github.com/WeeHong/">
               <a
-                className="text-amber-600 dark:text-yellow-300 text-lg mr-5 hover:text-amber-700  dark:hover:text-yellow-500"
+                className="text-amber-600 text-center dark:text-yellow-300 text-lg mr-5 hover:text-amber-700 dark:hover:text-yellow-500"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -31,16 +31,16 @@ const Home: NextPage = () => {
             </Link>
             <Link href="https://www.linkedin.com/in/weehongayden/">
               <a
-                className="text-amber-600 dark:text-yellow-300 text-lg mx-5 hover:text-amber-700  dark:hover:text-yellow-500"
+                className="text-amber-600 text-center dark:text-yellow-300 text-lg mx-5 hover:text-amber-700 dark:hover:text-yellow-500"
                 target="_blank"
                 rel="noreferrer"
               >
-                Linked In
+                LinkedIn
               </a>
             </Link>
             <Link href="https://medium.weehong.me/">
               <a
-                className="text-amber-600 dark:text-yellow-300 text-lg mx-5 hover:text-amber-700  dark:hover:text-yellow-500"
+                className="text-amber-600 text-center dark:text-yellow-300 text-lg ml-5 hover:text-amber-700 dark:hover:text-yellow-500"
                 target="_blank"
                 rel="noreferrer"
               >
