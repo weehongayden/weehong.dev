@@ -75,7 +75,7 @@ const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
                         className={classNames(
                           router.asPath === url.href
                             ? "text-amber-600 dark:text-yellow-300 font-medium"
-                            : "border-transparent text-gray-500",
+                            : "border-transparent text-gray-500 dark:text-gray-200",
                           "inline-flex items-center px-3 text-sm hover:text-amber-700 dark:hover:text-yellow-500 "
                         )}
                       >
@@ -165,16 +165,19 @@ const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
         </div>
 
         {open && (
-          <div className="border-y-2 sm:hidden" id="mobile-menu">
-            <div className="pt-2 pb-3 space-y-1">
+          <div
+            className="border-y-2 border-gray-200 dark:border-slate-700 sm:hidden"
+            id="mobile-menu"
+          >
+            <div className="py-2 space-y-1">
               {urls.map((url) => (
                 <Link href={url.href} key={url.id}>
                   <a
                     className={classNames(
                       router.asPath === url.href
-                        ? "text-yellow-600 font-medium"
-                        : "border-transparent text-gray-500",
-                      "block pl-3 pr-4 py-2 text-base font-base hover:text-yellow-700"
+                        ? "text-amber-600 font-medium"
+                        : "border-transparent text-gray-500 dark:text-gray-200",
+                      "block pl-3 pr-4 py-2 text-base font-base hover:text-amber-700 dark:hover:text-yellow-500"
                     )}
                   >
                     {url.name}
