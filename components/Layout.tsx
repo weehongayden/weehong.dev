@@ -88,7 +88,10 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
                 <button
                   aria-label="Toggle Dark Mode"
                   type="button"
-                  className="w-9 h-9 bg-wbite rounded-lg flex items-center justify-center  hover:ring-2 ring-gray-300 transition-all"
+                  className={classNames(
+                    resolvedTheme === "dark" ? "bg-white" : "bg-slate-900",
+                    "w-9 h-9 bg-wbite rounded-lg flex items-center justify-center  hover:ring-2 ring-gray-300 transition-all ml-3"
+                  )}
                   onClick={() =>
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")
                   }
@@ -99,7 +102,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      className="w-5 h-5 text-gray-800 dark:text-yellow-300"
+                      className="w-5 h-5 text-white dark:text-slate-700"
                     >
                       {resolvedTheme === "dark" ? (
                         <path
