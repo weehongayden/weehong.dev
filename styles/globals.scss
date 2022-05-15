@@ -17,3 +17,25 @@
 html {
   font-size: 18px;
 }
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+p {
+  @apply text-gray-900 dark:text-gray-300;
+}
+
+a {
+  @apply text-gray-700 dark:text-gray-300;
+  &.active {
+    @apply text-blue-500 dark:text-yellow-300;
+  }
+  &:hover {
+    @apply text-blue-700  dark:text-amber-500;
+  }
+}
