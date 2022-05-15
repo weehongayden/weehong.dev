@@ -53,11 +53,6 @@ const Footer: FC = () => {
               </Link>
             ))}
           </div>
-          <div className="mt-8 md:mt-3 md:order-1">
-            <p className="text-center text-base text-gray-400 dark:text-white">
-              &copy; 2022 WeeHong KOH, All rights reserved.
-            </p>
-          </div>
         </div>
       </div>
     </footer>

@@ -43,7 +43,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
   };
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -191,7 +191,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
           </div>
         )}
       </nav>
-      <div className="h-[calc(100vh-220px)] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">{children}</div>
       </div>
       <Footer />
