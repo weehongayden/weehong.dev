@@ -71,7 +71,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="flex justify-between h-16">
-              <div className="flex items-center ml-auto">
+              <div className="flex items-center mr-auto sm:mr-0 sm:ml-auto">
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-1">
                   {urls.map((url) => (
                     <Link href={url.href} key={url.id}>
@@ -89,10 +89,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
                 <button
                   aria-label="Toggle Dark Mode"
                   type="button"
-                  className={classNames(
-                    resolvedTheme === "dark" ? "bg-white" : "bg-slate-900",
-                    "w-9 h-9 bg-wbite rounded-lg flex items-center justify-center  hover:ring-2 ring-gray-300 transition-all ml-3"
-                  )}
+                  className="w-9 h-9 rounded-lg flex items-center justify-center hover:ring-2 ring-gray-300 transition-all bg-slate-900 dark:bg-white sm:ml-3"
                   onClick={() =>
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")
                   }
@@ -191,7 +188,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
           </div>
         )}
       </nav>
-      <div className="grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grow max-w-7xl mx-auto px-4 flex items-center sm:items-start sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">{children}</div>
       </div>
       <Footer />
