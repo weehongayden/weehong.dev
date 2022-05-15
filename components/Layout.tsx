@@ -127,7 +127,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
               <div className="-mr-2 flex items-center sm:hidden">
                 <button
                   type="button"
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-white hover:text-gray-500 ml-2 hover:bg-slate-900 hover:ring-2 hover:ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300"
+                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-white hover:text-gray-500 ml-2"
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                   onClick={() => setOpen((prev) => !prev)}
