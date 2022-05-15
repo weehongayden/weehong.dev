@@ -3,6 +3,9 @@ import {
   defineDocumentType,
   makeSource,
 } from "contentlayer/source-files";
+import rehypeCodeTitles from "rehype-code-title";
+import rehypePrism from "rehype-prism-plus";
+import remarkGfm from "remark-gfm";
 
 const computedFields: ComputedFields = {
   slug: {
@@ -20,6 +23,7 @@ const Article = defineDocumentType(() => ({
     publishedAt: { type: "string", required: true },
     summary: { type: "string", required: true },
     image: { type: "string", required: true },
+    tags: { type: "list", of: { type: "string" } },
   },
   computedFields,
 }));
@@ -27,6 +31,10 @@ const Article = defineDocumentType(() => ({
 const contentLayerConfig = makeSource({
   contentDirPath: "data",
   documentTypes: [Article],
+  mdx: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeCodeTitles, rehypePrism],
+  },
 });
 
 export default contentLayerConfig;

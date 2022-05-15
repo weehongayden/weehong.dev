@@ -1,3 +1,4 @@
+import TagList from "components/TagList";
 import { allArticles } from "contentlayer/generated";
 import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
@@ -7,21 +8,31 @@ import Layout from "../components/Layout";
 const Article = ({
   articles,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(articles);
   return (
-    <Layout>
+    <Layout
+      title="Article - WeeHong KOH"
+      description="Thoughts, learning and insight about programming, web technology, data structure and algorithms"
+    >
       <Container>
         <h1>Article</h1>
+        <h3 className="text-gray-500 dark:text-gray-300">
+          Thoughts, learning and insight about programming, web technology, data
+          structures and algorithms
+        </h3>
         <hr className="my-10 border-1 border-gray-300" />
-        <div className="grid sm:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+          {!articles.length && <h3>No article found.</h3>}
           {articles.map((article: any, index: number) => {
-            console.log(article);
             return (
-              <Link href={`article/${article.slug}`}>
-                <div key={index}>
-                  <h2>{article.title}</h2>
-                </div>
-              </Link>
+              <div key={index}>
+                <Link href={`article/${article.slug}`} passHref>
+                  <h2 className="cursor-pointer">{article.title}</h2>
+                </Link>
+                <TagList tags={article.tags} />
+                <p className="text-sm text-gray-500 dark:text-gray-300">
+                  {article.summary}
+                </p>
+              </div>
             );
           })}
         </div>

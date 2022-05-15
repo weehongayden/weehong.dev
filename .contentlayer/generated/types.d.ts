@@ -18,6 +18,7 @@ export type Article = {
   publishedAt: string
   summary: string
   image: string
+  tags?: string[] | undefined
   /** MDX file body */
   body: MDX
   slug: string

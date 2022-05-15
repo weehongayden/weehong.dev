@@ -3,14 +3,19 @@ import { useTheme } from "next-themes";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React, { FC, ReactNode, useEffect, useState } from "react";
+
+interface Props {
+  children: ReactNode;
+  metas: MetaProps;
+}
 
 interface MetaProps {
   title: string;
   description: string;
   image: string;
   type: string;
-  date?: string;
+  date: string;
 }
 
 const urls = [
@@ -26,15 +31,16 @@ const urls = [
   },
 ];
 
-const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
+const Layout: FC<Props> = (props) => {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+  const { children, ...metas } = props;
 
   useEffect(() => setMounted(true), []);
 
   const router = useRouter();
-  const meta: MetaProps = {
+  const meta = {
     title: "WeeHong KOH - Software Engineer and Web Technology Enthusiast",
     description:
       "Software Engineer, Web Developer, Front-end Developer, Back-end Developer, Web Technology Enthusiast, Do-er",
