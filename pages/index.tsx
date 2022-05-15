@@ -1,13 +1,12 @@
 import Layout from "components/Layout";
 import type { NextPage } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <div className="grid gap-0 my-10 grid-cols-1 sm:gap-5 sm:grid-cols-3">
+      <div className="grid gap-0 py-10 grid-cols-1 sm:gap-5 sm:grid-cols-3">
         <div className="flex flex-col order-2 col-span-2 sm:order-first">
           <h1 className="text-center font-bold sm:text-left">WeeHong KOH</h1>
           <h2 className="text-lg text-gray-700 dark:text-gray-300 text-center my-1 sm:text-left">
@@ -19,35 +18,6 @@ const Home: NextPage = () => {
           <h3 className="text-2xl my-4 text-center sm:text-left">
             Enjoy developing web application and automating trivia stuff
           </h3>
-          <div className="flex mt-5 justify-center sm:justify-start">
-            <Link href="https://github.com/WeeHong/">
-              <a
-                className="text-gray-500 text-center text-lg mr-5 hover:text-slate-700"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-            </Link>
-            <Link href="https://www.linkedin.com/in/weehongayden/">
-              <a
-                className="text-gray-500 text-center text-lg mx-5 hover:text-slate-700"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-            </Link>
-            <Link href="https://medium.weehong.me/">
-              <a
-                className="text-gray-500 text-center text-lg ml-5 hover:text-slate-700"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Medium
-              </a>
-            </Link>
-          </div>
         </div>
         <div className="w-[176px] relative mx-auto mb-8 sm:ml-auto sm:mr-0 sm:my-auto">
           <Image

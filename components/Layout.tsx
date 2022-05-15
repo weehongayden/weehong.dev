@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { FC, ReactNode, useEffect, useState } from "react";
+import Footer from "./Footer";
 
 interface MetaProps {
   title: string;
@@ -190,9 +191,10 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
           </div>
         )}
       </nav>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="h-[calc(100vh-220px)] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">{children}</div>
       </div>
+      <Footer />
     </div>
   );
 };
