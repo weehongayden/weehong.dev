@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark {
-  background: #003049;
-}
-
 @font-face {
   font-family: "Readexpro";
   font-style: normal;
@@ -14,6 +10,30 @@
   src: url(/fonts/Readexpro.woff2) format("woff2");
 }
 
-html {
-  font-size: 18px;
+body {
+  @apply text-slate-900 dark:text-white;
+}
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+a {
+  @apply text-slate-700 hover:text-blue-500 dark:text-white hover:dark:text-blue-300;
+}
+
+a.active {
+  @apply text-blue-500 dark:text-white;
+}
+
+span {
+  @apply text-xs;
 }

@@ -8,9 +8,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        navy: "#003049",
-      },
       fontFamily: {
         sans: ["Readexpro", ...fontFamily.sans],
       },

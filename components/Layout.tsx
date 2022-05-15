@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React, { FC, ReactNode, useEffect, useState } from "react";
 
 interface MetaProps {
   title: string;
@@ -21,7 +21,10 @@ const urls = [
   },
 ];
 
-const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
+const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
+  children,
+  ...metas
+}) => {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
@@ -63,20 +66,18 @@ const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <nav className="bg-white dark:bg-navy">
+      <nav className="bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="flex justify-between h-16">
               <div className="flex items-center ml-auto">
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <div className="hidden sm:ml-6 sm:flex sm:space-x-1">
                   {urls.map((url) => (
                     <Link href={url.href} key={url.id}>
                       <a
                         className={classNames(
-                          router.asPath === url.href
-                            ? "text-amber-600 dark:text-yellow-300 font-medium"
-                            : "border-transparent text-gray-500 dark:text-gray-200",
-                          "inline-flex items-center px-3 text-sm hover:text-amber-700 dark:hover:text-yellow-500 "
+                          router.asPath === url.href && "active",
+                          "inline-flex items-center px-3"
                         )}
                       >
                         {url.name}
@@ -87,7 +88,7 @@ const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
                 <button
                   aria-label="Toggle Dark Mode"
                   type="button"
-                  className="w-9 h-9 bg-wbite rounded-lg flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
+                  className="w-9 h-9 bg-wbite rounded-lg flex items-center justify-center  hover:ring-2 ring-gray-300 transition-all"
                   onClick={() =>
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")
                   }
@@ -122,7 +123,7 @@ const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
               <div className="-mr-2 flex items-center sm:hidden">
                 <button
                   type="button"
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-white hover:text-gray-500 dark:hover:text-navy hover:bg-gray-100 dark:hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-white hover:text-gray-500 ml-2 hover:bg-slate-900 hover:ring-2 hover:ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300"
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                   onClick={() => setOpen((prev) => !prev)}
@@ -174,10 +175,8 @@ const Layout = ({ children, ...metas }: { children: React.ReactNode }) => {
                 <Link href={url.href} key={url.id}>
                   <a
                     className={classNames(
-                      router.asPath === url.href
-                        ? "text-amber-600 font-medium"
-                        : "border-transparent text-gray-500 dark:text-gray-200",
-                      "block pl-3 pr-4 py-2 text-base font-base hover:text-amber-700 dark:hover:text-yellow-500"
+                      router.asPath === url.href && "active font-medium",
+                      "block pl-3 pr-4 py-2"
                     )}
                   >
                     {url.name}

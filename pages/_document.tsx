@@ -14,7 +14,7 @@ const Document = () => {
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
       </Head>
-      <body>
+      <body className="dark:bg-slate-900">
         <Main />
         <NextScript />
       </body>
