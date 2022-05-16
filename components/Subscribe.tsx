@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const Subscribe: FC = () => {
   return (
-    <form className="mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end">
+    <form className="mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end hidden">
       <div>
         <label htmlFor="email-address" className="sr-only">
           Email address
