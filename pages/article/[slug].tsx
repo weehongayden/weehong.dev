@@ -8,7 +8,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 const Content: NextPage<{ article: Article }> = ({ article }) => {
   const Component = useMDXComponent(article.body.code);
   return (
-    <Layout {...article}>
+    <Layout type="article" {...article}>
       <div className="relative py-16 overflow-hidden">
         <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
           <div
