@@ -53,7 +53,7 @@ const Footer: FC = () => {
               </Link>
             ))}
           </div>
-          <div className="mt-3 text-slate-500 dark:text-gray-300">
+          <div className="mt-3 text-center text-slate-500 dark:text-gray-300">
             <span>
               Copyrights &copy; WeeHong KOH. Built with{" "}
               <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
