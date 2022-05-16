@@ -8,6 +8,7 @@ export const useAnalytics = () => {
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
       const fathomId = process.env.NEXT_PUBLIC_FATHOM_SITE_ID;
+      console.log("Fathom Id: ", fathomId);
 
       if (fathomId) {
         Fathom.load(fathomId, {
