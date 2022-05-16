@@ -4,13 +4,14 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { FC, ReactNode, useEffect, useState } from "react";
+import Container from "./Container";
 import Footer from "./Footer";
 
 interface MetaProps {
   title: string;
-  description: string;
-  image: string;
-  type: string;
+  description?: string;
+  image?: string;
+  type?: string;
   date?: string;
 }
 
@@ -22,7 +23,7 @@ const urls = [
   },
 ];
 
-const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
+const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
   children,
   ...metas
 }) => {
@@ -188,9 +189,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps }> = ({
           </div>
         )}
       </nav>
-      <div className="grow max-w-7xl mx-auto px-4 flex items-center sm:items-start sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">{children}</div>
-      </div>
+      <Container>{children}</Container>
       <Footer />
     </div>
   );

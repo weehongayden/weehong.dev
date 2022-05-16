@@ -3,8 +3,11 @@ import { NextPage } from "next";
 import Link from "next/link";
 
 const NotFound: NextPage = () => {
+  const meta = {
+    title: "NotFound - WeeHong KOH",
+  };
   return (
-    <Layout title="404 - WeeHong KOH">
+    <Layout metas={meta}>
       <div className="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8 dark:bg-slate-900">
         <div className="max-w-max mx-auto">
           <main className="sm:flex">
