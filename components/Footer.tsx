@@ -33,7 +33,7 @@ const navigation = [
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-white dark:bg-slate-700">
+    <footer className="bg-gray-50 dark:bg-slate-700">
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <div className="max-w-3xl mx-auto">
           <div className="flex justify-center space-x-6 md:order-2">
@@ -52,6 +52,26 @@ const Footer: FC = () => {
                 </a>
               </Link>
             ))}
+          </div>
+          <div className="mt-3 text-slate-500 dark:text-gray-300">
+            <span>
+              Copyrights &copy; WeeHong KOH. Built with{" "}
+              <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+                NextJs
+              </a>
+              ,{" "}
+              <a
+                href="https://tailwindcss.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                TailwindCSS
+              </a>
+              , deployed on{" "}
+              <a href="https://vercel.com/" target="_blank" rel="noreferrer">
+                Vercel
+              </a>
+            </span>
           </div>
         </div>
       </div>
