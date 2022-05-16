@@ -40,7 +40,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
 
   const router = useRouter();
   const meta: MetaProps = {
-    title: "WeeHong KOH - Software Engineer and Web Enthusiast",
+    title: "Wee Hong KOH - Software Engineer and Web Enthusiast",
     description:
       "Software Engineer, Web Developer, Front-end Developer, Back-end Developer, Web Technology Enthusiast, Do-er",
     image: "https://weehong.dev/static/images/banner.png",
@@ -60,7 +60,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
         />
         <link rel="canonical" href={`https://weehong.dev${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="WeeHong KOH" />
+        <meta property="og:site_name" content="Wee Hong KOH" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />

@@ -44,7 +44,7 @@ const posts = [
 
 const Article: NextPage = () => {
   const meta = {
-    title: "Article - WeeHong KOH",
+    title: "Article - Wee Hong KOH",
     description:
       "Thought, learning and insight on the programming, web technology, data structures and algorithms",
   };

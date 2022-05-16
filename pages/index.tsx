@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <Layout>
       <div className="grid gap-0 grid-cols-1 sm:gap-5 sm:grid-cols-3">
         <div className="flex flex-col order-2 col-span-2 sm:order-first">
-          <h1 className="text-center font-bold sm:text-left">WeeHong KOH</h1>
+          <h1 className="text-center font-bold sm:text-left">Wee Hong KOH</h1>
           <h2 className="text-lg text-gray-700 dark:text-gray-300 text-center my-1 sm:text-left">
             Software Engineer at{" "}
             <span className={`${styles.dbsColor} text-lg text-center`}>
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         </div>
         <div className="w-[176px] relative mx-auto mb-8 sm:ml-auto sm:mr-0 sm:my-auto">
           <Image
-            alt="WeeHong KOH"
+            alt="Wee Hong KOH"
             height={176}
             width={176}
             src="/profile.jpg"

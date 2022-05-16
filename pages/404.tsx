@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const NotFound: NextPage = () => {
   const meta = {
-    title: "404 Not Found - WeeHong KOH",
+    title: "404 Not Found - Wee Hong KOH",
   };
   return (
     <Layout {...meta}>
