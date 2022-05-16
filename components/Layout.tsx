@@ -38,7 +38,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
     title: "WeeHong KOH - Software Engineer and Web Technology Enthusiast",
     description:
       "Software Engineer, Web Developer, Front-end Developer, Back-end Developer, Web Technology Enthusiast, Do-er",
-    image: "https://weehong.dev/static/images/profile.png",
+    image: "https://weehong.dev/static/images/banner.png",
     type: "website",
     ...metas,
   };
