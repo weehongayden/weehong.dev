@@ -40,7 +40,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
 
   const router = useRouter();
   const meta: MetaProps = {
-    title: "WeeHong KOH - Software Engineer and Web Technology Enthusiast",
+    title: "WeeHong KOH - Software Engineer and Web Enthusiast",
     description:
       "Software Engineer, Web Developer, Front-end Developer, Back-end Developer, Web Technology Enthusiast, Do-er",
     image: "https://weehong.dev/static/images/banner.png",

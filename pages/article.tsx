@@ -49,7 +49,7 @@ const Article: NextPage = () => {
       "Thought, learning and insight on the programming, web technology, data structures and algorithms",
   };
   return (
-    <Layout metas={meta}>
+    <Layout {...meta}>
       <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
         <div>
           <h1 className="text-3xl tracking-tight font-extrabold sm:text-4xl">
