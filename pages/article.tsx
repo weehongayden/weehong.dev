@@ -30,6 +30,7 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
             </div>
           </div>
           <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+            {!articles.length && <h2 className="mb-4">No posts found.</h2>}
             {articles.map((article) => (
               <div key={article.title}>
                 <div className="flex justify-between">

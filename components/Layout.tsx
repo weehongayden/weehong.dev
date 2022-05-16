@@ -42,7 +42,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
     title: "Wee Hong KOH - Software Engineer and Web Enthusiast",
     description:
       "Software Engineer, Web Developer, Front-end Developer, Back-end Developer, Web Technology Enthusiast, Do-er",
-    image: "https://weehong.dev/static/images/banner.png",
+    image: "https://weehong.dev/static/images/banner.jpg",
     type: "website",
     ...metas,
   };
