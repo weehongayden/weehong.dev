@@ -1,4 +1,4 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
@@ -14,5 +14,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  variants: {
+    typography: ["dark"],
+  },
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };

@@ -4,7 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { FC, ReactNode, useEffect, useState } from "react";
-import Container from "./Container";
 import Footer from "./Footer";
 
 interface MetaProps {
@@ -12,7 +11,7 @@ interface MetaProps {
   description?: string;
   image?: string;
   type?: string;
-  date?: string;
+  publishedAt?: string;
 }
 
 const urls = [
@@ -69,8 +68,8 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        {meta.date && (
-          <meta property="article:published_time" content={meta.date} />
+        {meta.publishedAt && (
+          <meta property="article:published_time" content={meta.publishedAt} />
         )}
       </Head>
       <nav className="bg-white dark:bg-slate-900">
@@ -194,7 +193,7 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
           </div>
         )}
       </nav>
-      <Container>{children}</Container>
+      {children}
       <Footer />
     </div>
   );
