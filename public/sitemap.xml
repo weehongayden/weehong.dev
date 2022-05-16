@@ -7,4 +7,14 @@
   <url>
     <loc>https://weehong.dev</loc>
   </url>
+
+  <url>
+    <loc
+      >https://weehong.dev/article/image-gallery-supabase-tailwind-nextjs</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://weehong.dev/article/sample</loc>
+  </url>
 </urlset>
