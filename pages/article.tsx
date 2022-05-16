@@ -56,10 +56,10 @@ const Article: NextPage = () => {
             Article
           </h1>
           <div className="mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center">
-            <p className="text-xl">
+            <h2 className="text-xl">
               Thought, learning and insight on the programming, web technology,
               data structures and algorithms
-            </p>
+            </h2>
             <Subscribe />
           </div>
         </div>
