@@ -10,6 +10,7 @@
     "postbuild": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-sitemap.mjs"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.1",
     "classnames": "^2.3.1",
     "fathom-client": "^3.4.1",
     "globby": "^13.1.1",

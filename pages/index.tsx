@@ -6,7 +6,7 @@ import styles from "styles/Home.module.css";
 const Home: NextPage = () => {
   return (
     <Layout>
-      <div className="grid gap-0 py-10 grid-cols-1 sm:gap-5 sm:grid-cols-3">
+      <div className="grid gap-0 grid-cols-1 sm:gap-5 sm:grid-cols-3">
         <div className="flex flex-col order-2 col-span-2 sm:order-first">
           <h1 className="text-center font-bold sm:text-left">WeeHong KOH</h1>
           <h2 className="text-lg text-gray-700 dark:text-gray-300 text-center my-1 sm:text-left">

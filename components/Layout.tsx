@@ -21,6 +21,11 @@ const urls = [
     name: "About",
     href: "/",
   },
+  {
+    id: "article",
+    name: "Article",
+    href: "/article",
+  },
 ];
 
 const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
