@@ -16,7 +16,8 @@ const Home: NextPage = () => {
             </span>
           </h2>
           <h3 className="text-2xl my-4 text-center sm:text-left">
-            Enjoy developing web application and automating trivia stuff
+            Enjoy developing web application, automating trivia stuff and
+            reading others' source code
           </h3>
         </div>
         <div className="w-[176px] relative mx-auto mb-8 sm:ml-auto sm:mr-0 sm:my-auto">
