@@ -5,8 +5,13 @@ import Image from "next/image";
 import styles from "styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const metas = {
+    title: "Wee Hong KOH - Software Engineer and Web Enthusiast",
+    description:
+      "Wee Hong KOH is a software engineer who based in Singapore. He enjoys developing web applications, automating trivia stuff, and reading others' source code and grinding data structure and algorithms. He always gets his hands dirty when discovering something interesting.",
+  };
   return (
-    <Layout>
+    <Layout {...metas}>
       <Container>
         <div className="grid gap-0 grid-cols-1 sm:gap-5 sm:grid-cols-3">
           <div className="flex flex-col order-2 col-span-2 sm:order-first">

@@ -11,7 +11,7 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
   const meta = {
     title: "Article - Wee Hong KOH",
     description:
-      "Thought, learning and insight on the programming, web technology, data structures and algorithms",
+      "Wee Hong KOH constantly learning and reading from other platforms and people. This is the place he shares his thought, learning and insight on the programming, web technology, data structures and algorithms",
   };
   return (
     <Layout {...meta}>
