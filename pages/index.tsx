@@ -1,10 +1,14 @@
 import Container from "components/Container";
 import Layout from "components/Layout";
+import { pick } from "contentlayer/client";
+import type { Article } from "contentlayer/generated";
+import { allArticles } from "contentlayer/generated";
 import type { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "styles/Home.module.css";
 
-const Home: NextPage = () => {
+const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
   const metas = {
     title: "Wee Hong KOH - Software Engineer and Web Enthusiast",
     description:
@@ -37,9 +41,80 @@ const Home: NextPage = () => {
             />
           </div>
         </div>
+        <div className="font-bold mt-14">
+          <h2>Recent Published</h2>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            {!articles.length && <h2 className="mb-4">No posts found.</h2>}
+            {articles.map((article) => (
+              <div className="border border-2 rounded p-5" key={article.title}>
+                <div className="flex gap-2">
+                  {article.tags &&
+                    article.tags.map((tag: string, index: number) => {
+                      return (
+                        <span
+                          key={`${tag}-${index}`}
+                          className="bg-gray-500 rounded-full px-2 py-1 text-white dark:text-slate-900"
+                        >
+                          {tag}
+                        </span>
+                      );
+                    })}
+                </div>
+                <div className="block">
+                  <p className="text-lg font-semibold">{article.title}</p>
+                </div>
+                <div className="mt-3 text-right sm:text-left">
+                  <Link href={`article/${article.slug}`}>
+                    <a className="text-sm font-semibold text-blue-500 dark:text-green-400 hover:text-blue-600 hover:Dark:text-green-500">
+                      Read full story
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="block text-center mt-8">
+            <Link href="/article">
+              <a className="text-lg text-centerfont-semibold text-blue-500 dark:text-green-400 hover:text-blue-600 hover:Dark:text-green-500">
+                Read all articles
+              </a>
+            </Link>
+          </div>
+        </div>
       </Container>
     </Layout>
   );
 };
 
 export default Home;
+
+export function getStaticProps() {
+  const articles: Array<
+    Pick<
+      Article,
+      | "slug"
+      | "title"
+      | "description"
+      | "publishedAt"
+      | "wordCount"
+      | "readingTime"
+    >
+  > = allArticles
+    .map((article) =>
+      pick(article, [
+        "slug",
+        "title",
+        "description",
+        "publishedAt",
+        "wordCount",
+        "readingTime",
+      ])
+    )
+    .sort(
+      (a, b) =>
+        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    )
+    .slice(0, 2);
+
+  return { props: { articles } };
+}

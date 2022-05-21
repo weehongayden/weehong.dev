@@ -116,17 +116,21 @@ const Content: NextPage<{ article: Article }> = ({ article }) => {
         </div>
         <div className="relative px-4 sm:px-6 lg:px-8">
           <div className="text-lg max-w-prose mx-auto">
-            <h1>
-              <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
-                Introducing
-              </span>
-              <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight sm:text-4xl">
-                {article.title}
-              </span>
+            <h1 className="mt-2 block text-blue-500 text-3xl text-center leading-8 font-extrabold tracking-tight sm:text-4xl dark:text-green-500">
+              {article.title}
             </h1>
             <p className="mt-8 text-xl text-gray-500 dark:text-gray-300 leading-8">
               {article.description}
             </p>
+
+            <div className="relative mt-10 pb-5">
+              <div
+                className="absolute inset-0 flex items-center"
+                aria-hidden="true"
+              >
+                <div className="w-full border-t border-gray-300" />
+              </div>
+            </div>
           </div>
           <div className="mt-6 prose prose-indigo prose-lg text-gray-500 dark:text-gray-300 mx-auto">
             <Component components={components} />
