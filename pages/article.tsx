@@ -108,16 +108,18 @@ export function getStaticProps() {
       | "readingTime"
     >
   > = allArticles
-    .map((article) =>
-      pick(article, [
-        "slug",
-        "title",
-        "description",
-        "publishedAt",
-        "wordCount",
-        "readingTime",
-      ])
-    )
+    .filter((article) => {
+      if (article.isPublished) {
+        pick(article, [
+          "slug",
+          "title",
+          "description",
+          "publishedAt",
+          "wordCount",
+          "readingTime",
+        ]);
+      }
+    })
     .sort(
       (a, b) =>
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))

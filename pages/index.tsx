@@ -44,7 +44,7 @@ const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
         <div className="font-bold mt-14">
           <h2>Recent Published</h2>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {!articles.length && <h2 className="mb-4">No posts found.</h2>}
+            {!articles.length && <h3 className="mb-4">No posts found.</h3>}
             {articles.map((article) => (
               <div className="border border-2 rounded p-5" key={article.title}>
                 <div className="flex gap-2">
@@ -73,13 +73,15 @@ const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
               </div>
             ))}
           </div>
-          <div className="block text-center mt-8">
-            <Link href="/article">
-              <a className="text-lg text-centerfont-semibold text-blue-500 dark:text-green-400 hover:text-blue-600 hover:Dark:text-green-500">
-                Read all articles
-              </a>
-            </Link>
-          </div>
+          {articles.length > 0 && (
+            <div className="block text-center mt-8">
+              <Link href="/article">
+                <a className="text-lg text-centerfont-semibold text-blue-500 dark:text-green-400 hover:text-blue-600 hover:Dark:text-green-500">
+                  Read all articles
+                </a>
+              </Link>
+            </div>
+          )}
         </div>
       </Container>
     </Layout>
