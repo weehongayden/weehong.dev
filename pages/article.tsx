@@ -65,7 +65,7 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
                       return (
                         <span
                           key={`${tag}-${index}`}
-                          className="bg-gray-500 rounded-full px-2 py-1 text-white dark:text-slate-900"
+                          className="bg-gray-500 rounded-full px-2 py-1 text-white dark:by-gray-300 dark:text-slate-900"
                         >
                           {tag}
                         </span>
