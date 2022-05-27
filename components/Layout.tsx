@@ -77,6 +77,10 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
         {meta.publishedAt && (
           <meta property="article:published_time" content={meta.publishedAt} />
         )}
+        <meta
+          name="theme-color"
+          content={resolvedTheme === "dark" ? "#0f172a" : "#fff"}
+        />
       </Head>
       <nav className="bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
