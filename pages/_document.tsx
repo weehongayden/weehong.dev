@@ -46,9 +46,6 @@ const Document = () => {
           `,
           }}
         />
-        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-        <meta name="theme-color" content="#872e4e" media="(prefers-color-scheme: dark)">
-        <meta content="#ffffff" name="msapplication-TileColor" />
       </Head>
       <body className="bg-white dark:bg-slate-900">
         <Main />
