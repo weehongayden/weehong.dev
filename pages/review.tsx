@@ -2,16 +2,16 @@ import Container from "components/Container";
 import Layout from "components/Layout";
 import Subscribe from "components/Subscribe";
 import { pick } from "contentlayer/client";
-import type { Article } from "contentlayer/generated";
-import { allArticles } from "contentlayer/generated";
+import type { Review } from "contentlayer/generated";
+import { allReviews } from "contentlayer/generated";
 import { NextPage } from "next";
 import Link from "next/link";
 
-const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
+const Review: NextPage<{ reviews: Array<Review> }> = ({ reviews }) => {
   const meta = {
-    title: "Article - Wee Hong KOH",
+    title: "Review - Wee Hong KOH",
     description:
-      "Wee Hong KOH constantly learning and reading from other platforms and people. This is the place he shares his thought, learning and insight on the programming, web technology, data structures and algorithms",
+      "Wee Hong KOH constantly practice his data structure and algorithm daily to sharpen his mindset and ready for upcoming challenge",
   };
   return (
     <Layout {...meta}>
@@ -19,24 +19,24 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
         <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
           <div>
             <h1 className="text-3xl tracking-tight font-extrabold sm:text-4xl">
-              Article
+              Review
             </h1>
             <div className="mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center">
               <h2 className="text-xl">
-                Thought, learning and insight on the programming, web
-                technology, data structures and algorithms
+                Thought, learning and insight on the LeetCode questions. Sharing
+                the thought process for reviewing purpose.
               </h2>
               <Subscribe />
             </div>
           </div>
           <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
-            {!articles.length && <h2 className="mb-4">No posts found.</h2>}
-            {articles.map((article) => (
-              <div key={article.title}>
+            {!reviews.length && <h2 className="mb-4">No posts found.</h2>}
+            {reviews.map((review) => (
+              <div key={review.title}>
                 <div className="flex justify-between">
                   <p className="text-sm">
-                    <time dateTime={article.publishedAt}>
-                      {article.publishedAt}
+                    <time dateTime={review.publishedAt}>
+                      {review.publishedAt}
                     </time>
                   </p>
                   <div className="flex items-center">
@@ -55,13 +55,13 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
                       />
                     </svg>
                     <span className="text-sm ml-1">
-                      {article.readingTime.text}
+                      {review.readingTime.text}
                     </span>
                   </div>
                 </div>
                 <div className="flex gap-2 my-3">
-                  {article.tags &&
-                    article.tags.map((tag: string, index: number) => {
+                  {review.tags &&
+                    review.tags.map((tag: string, index: number) => {
                       return (
                         <span
                           key={`${tag}-${index}`}
@@ -73,13 +73,13 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
                     })}
                 </div>
                 <div className="block">
-                  <p className="text-xl font-semibold">{article.title}</p>
+                  <p className="text-xl font-semibold">{review.title}</p>
                   <p className="mt-3 dark:text-gray-300 text-base">
-                    {article.description}
+                    {review.description}
                   </p>
                 </div>
                 <div className="mt-3 text-right sm:text-left">
-                  <Link href={`article/${article.slug}`}>
+                  <Link href={`review/${review.slug}`}>
                     <a className="text-base font-semibold text-blue-500 dark:text-green-400 hover:text-blue-600 hover:Dark:text-green-500">
                       Read full story
                     </a>
@@ -94,12 +94,12 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
   );
 };
 
-export default Article;
+export default Review;
 
 export function getStaticProps() {
-  const articles: Array<
+  const reviews: Array<
     Pick<
-      Article,
+      Review,
       | "slug"
       | "title"
       | "description"
@@ -107,10 +107,10 @@ export function getStaticProps() {
       | "wordCount"
       | "readingTime"
     >
-  > = allArticles
-    .filter((article) => {
-      if (article.isPublished) {
-        return pick(article, [
+  > = allReviews
+    .filter((review) => {
+      if (review.isPublished) {
+        return pick(review, [
           "slug",
           "title",
           "description",
@@ -125,5 +125,5 @@ export function getStaticProps() {
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
     );
 
-  return { props: { articles } };
+  return { props: { reviews } };
 }

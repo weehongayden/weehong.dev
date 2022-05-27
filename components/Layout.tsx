@@ -25,6 +25,12 @@ const urls = [
     name: "Article",
     href: "/article",
   },
+  {
+    id: "review",
+    name: "Review",
+    shortDescription: "LeetCode",
+    href: "/review",
+  },
 ];
 
 const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
@@ -83,10 +89,15 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
                       <a
                         className={classNames(
                           router.asPath === url.href && "active",
-                          "inline-flex items-center px-3"
+                          "flex flex-col justify-center items-center text-center leading-3 px-3"
                         )}
                       >
                         {url.name}
+                        {url.shortDescription && (
+                          <span className="text-gray-500 text-xs">
+                            {url.shortDescription}
+                          </span>
+                        )}
                       </a>
                     </Link>
                   ))}
@@ -186,6 +197,9 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
                     )}
                   >
                     {url.name}
+                    {url.shortDescription && (
+                      <span className="block">{url.shortDescription}</span>
+                    )}
                   </a>
                 </Link>
               ))}

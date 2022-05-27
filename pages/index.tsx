@@ -26,7 +26,21 @@ const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
                 DBS Bank
               </span>
             </h2>
-            <h3 className="text-2xl my-4 text-center sm:text-left">
+            <section id="fav-quote" className="my-5">
+              <div className="max-w-4xl p-4 text-white dark:text-gray-800 bg-slate-900 dark:bg-white rounded-lg shadow">
+                <h4 className="text-center mb-1">Favourite Quote</h4>
+                <div className="h-3 text-3xl text-left text-gray-200 dark:text-gray-600">
+                  “
+                </div>
+                <p className="px-4 text-center text-gray-200 dark:text-gray-600">
+                  曾子曰：“吾日三省吾身：为人谋而不忠乎？与朋友交而不信乎？传不习乎？”
+                </p>
+                <div className="h-3 text-3xl text-right text-gray-200 dark:text-gray-600">
+                  ”
+                </div>
+              </div>
+            </section>
+            <h3 className="text-2xl mb-4 text-center sm:text-left">
               Enjoy developing web application, automating trivia stuff and
               reading others&apos; source code
             </h3>
@@ -42,7 +56,7 @@ const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
           </div>
         </div>
         <div className="font-bold mt-14">
-          <h2>Recent Published</h2>
+          <h2 className="text-center md:text-left">Recent Published</h2>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {!articles.length && <h3 className="mb-4">No posts found.</h3>}
             {articles.map((article) => (
