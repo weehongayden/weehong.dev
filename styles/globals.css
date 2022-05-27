@@ -69,6 +69,10 @@ span {
   @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-lg bg-gray-100 dark:bg-gray-700;
 }
 
+.prose ol > li {
+  @apply whitespace-pre-line;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: #d6deeb;

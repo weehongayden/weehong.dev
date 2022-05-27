@@ -29,15 +29,10 @@ function Callout(props: any) {
   );
 }
 
-function List(props: any) {
-  return <li className="whitespace-pre-line">{props.children}</li>;
-}
-
 const MDXComponents = {
   Image: RoundedImage,
   a: CustomLink,
   Callout,
-  li: List,
 };
 
 export default MDXComponents;
