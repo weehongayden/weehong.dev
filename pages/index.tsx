@@ -60,7 +60,8 @@ const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {!articles.length && <h3 className="mb-4">No posts found.</h3>}
             {articles.map((article) => (
-              <div className="border border-2 rounded p-5" key={article.title}>
+              <Link href={`article/${article.slug}`} key={article.title}>
+              <a className="border border-2 rounded p-5">
                 <div className="flex gap-2">
                   {article.tags &&
                     article.tags.map((tag: string, index: number) => {
@@ -74,17 +75,14 @@ const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
                       );
                     })}
                 </div>
-                <div className="block">
-                  <p className="text-lg font-semibold">{article.title}</p>
+                <div className="block text-center sm:text-left">
+                  <p className="text-xl font-semibold mb-3 dark:text-green-400">{article.title}</p>
+                  <span className="font-normal text-base text-slate-500 dark:text-gray-300">
+                    {article.description}
+                  </span>
                 </div>
-                <div className="mt-3 text-right sm:text-left">
-                  <Link href={`article/${article.slug}`}>
-                    <a className="text-sm font-semibold text-blue-500 dark:text-green-400 hover:text-blue-600 hover:Dark:text-green-500">
-                      Read full story
-                    </a>
-                  </Link>
-                </div>
-              </div>
+              </a>
+              </Link>
             ))}
           </div>
           {articles.length > 0 && (
