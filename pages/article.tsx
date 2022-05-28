@@ -74,7 +74,7 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
                 </div>
                 <div className="block">
                   <p className="text-xl font-semibold">{article.title}</p>
-                  <p className="mt-3 dark:text-gray-300 text-base">
+                  <p className="mt-3 text-gray-500 dark:text-gray-300 text-base">
                     {article.description}
                   </p>
                 </div>
