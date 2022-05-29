@@ -1,8 +1,8 @@
 import Container from "components/Container";
-import Layout from "components/Layout";
 import { pick } from "contentlayer/client";
 import type { Article } from "contentlayer/generated";
 import { allArticles } from "contentlayer/generated";
+import Layout from "layouts/Layout";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,27 +61,29 @@ const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
             {!articles.length && <h3 className="mb-4">No posts found.</h3>}
             {articles.map((article) => (
               <Link href={`article/${article.slug}`} key={article.title}>
-              <a className="border border-2 rounded p-5">
-                <div className="flex gap-2">
-                  {article.tags &&
-                    article.tags.map((tag: string, index: number) => {
-                      return (
-                        <span
-                          key={`${tag}-${index}`}
-                          className="bg-gray-500 rounded-full px-2 py-1 text-white dark:text-slate-900"
-                        >
-                          {tag}
-                        </span>
-                      );
-                    })}
-                </div>
-                <div className="block text-center sm:text-left">
-                  <p className="text-xl font-semibold mb-3 dark:text-green-400">{article.title}</p>
-                  <span className="font-normal text-base text-slate-500 dark:text-gray-300">
-                    {article.description}
-                  </span>
-                </div>
-              </a>
+                <a className="border border-2 rounded p-5">
+                  <div className="flex gap-2">
+                    {article.tags &&
+                      article.tags.map((tag: string, index: number) => {
+                        return (
+                          <span
+                            key={`${tag}-${index}`}
+                            className="bg-gray-500 rounded-full px-2 py-1 text-white dark:text-slate-900"
+                          >
+                            {tag}
+                          </span>
+                        );
+                      })}
+                  </div>
+                  <div className="block text-center sm:text-left">
+                    <p className="text-xl font-semibold mb-3 dark:text-green-400">
+                      {article.title}
+                    </p>
+                    <span className="font-normal text-base text-slate-500 dark:text-gray-300">
+                      {article.description}
+                    </span>
+                  </div>
+                </a>
               </Link>
             ))}
           </div>

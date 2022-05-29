@@ -1,7 +1,7 @@
-import ContentLayout from "components/ContentLayout";
-import Layout from "components/Layout";
 import type { Article } from "contentlayer/generated";
 import { allArticles } from "contentlayer/generated";
+import ContentLayout from "layouts/ContentLayout";
+import Layout from "layouts/Layout";
 import { NextPage } from "next";
 
 const Content: NextPage<{ article: Article }> = ({ article }) => {

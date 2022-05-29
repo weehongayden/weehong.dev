@@ -1,7 +1,7 @@
-import ContentLayout from "components/ContentLayout";
-import Layout from "components/Layout";
 import type { Review } from "contentlayer/generated";
 import { allReviews } from "contentlayer/generated";
+import ContentLayout from "layouts/ContentLayout";
+import Layout from "layouts/Layout";
 import { NextPage } from "next";
 
 const Content: NextPage<{ review: Review }> = ({ review }) => {

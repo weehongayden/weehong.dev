@@ -1,18 +1,11 @@
 import classNames from "classnames";
+import { MetaProps } from "interfaces/MetaProps";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { FC, ReactNode, useEffect, useState } from "react";
-import Footer from "./Footer";
-
-interface MetaProps {
-  title: string;
-  description?: string;
-  image?: string;
-  type?: string;
-  publishedAt?: string;
-}
+import Footer from "../components/Footer";
 
 const urls = [
   {
