@@ -29,7 +29,7 @@ const ArticleLayout: NextPage<{
             <Subscribe />
           </div>
         </div>
-        <div className="mt-6 pt-10 grid grid-cols-2 gap-16">
+        <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
           {!contents.length && <h2 className="mb-4">No posts found.</h2>}
           {contents.map((content) => (
             <ContentCard key={content.title} content={content} path="article" />
