@@ -6,7 +6,7 @@ import { FC } from "react";
 const ContentLayout: FC<{ content: Review | Article }> = ({ content }) => {
   const Component = useMDXComponent(content.body.code);
   return (
-    <div className="relative py-16 overflow-hidden">
+    <div className="relative px-4 pt-8 pb-20 overflow-hidden sm:items-start sm:px-6 lg:pt-16">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
         <div
           className="relative h-full text-lg max-w-prose mx-auto"
@@ -110,7 +110,7 @@ const ContentLayout: FC<{ content: Review | Article }> = ({ content }) => {
           </svg>
         </div>
       </div>
-      <div className="relative px-4 sm:px-6 lg:px-8">
+      <div className="relative">
         <div className="text-lg max-w-prose mx-auto">
           <h1 className="mt-2 block text-blue-500 text-3xl text-center leading-8 font-extrabold tracking-tight sm:text-4xl dark:text-green-500">
             {content.title}

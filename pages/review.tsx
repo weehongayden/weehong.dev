@@ -12,12 +12,11 @@ const Review: NextPage<{ reviews: Array<Review> }> = ({ reviews }) => {
   };
   return (
     <ArticleLayout
-      title="Article"
-      description="Thought, learning and insight on the programming, web
-    technology, data structures and algorithms"
+      title="Review"
+      description="A place to share my learning, insight and tips based on LeetCode question"
       contents={reviews}
       metas={meta}
-      path="article"
+      path="review"
     />
   );
 };

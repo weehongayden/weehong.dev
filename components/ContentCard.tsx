@@ -30,7 +30,7 @@ const ContentCard: FC<{ content: Article | Review; path: string }> = ({
           <span className="text-sm ml-1">{content.readingTime.text}</span>
         </div>
       </div>
-      <div className="flex gap-2 my-3">
+      <div className="flex flex-wrap gap-2 my-3">
         {content.tags &&
           content.tags.map((tag: string, index: number) => {
             return (
@@ -45,14 +45,14 @@ const ContentCard: FC<{ content: Article | Review; path: string }> = ({
       </div>
       <div className="block">
         <p className="text-xl font-semibold">{content.title}</p>
-        <p className="mt-3 text-gray-500 dark:text-gray-300 text-base">
+        <p className="mt-3 text-gray-500 dark:text-gray-300 text-base line-clamp-3">
           {content.description}
         </p>
       </div>
       <div className="mt-3 text-right sm:text-left">
         <Link href={`/${path}/${content.slug}`}>
           <a className="text-base font-semibold text-blue-500 dark:text-green-400 hover:text-blue-600 hover:Dark:text-green-500">
-            Read full story
+            {path === "review" ? "Read review" : "Read full story"}
           </a>
         </Link>
       </div>

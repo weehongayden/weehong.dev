@@ -1,0 +1,93 @@
+---
+isPublished: true
+publishedAt: "2022-05-22"
+title: "LeetCode - 653. Two Sum IV - Input is a BST"
+description: "In this question, there are 2 ways to solve the problem by using Depth First Search and Two Pointers."
+tags:
+  - DFS
+  - Two Pointers
+  - Deque
+  - Binary Search Tree
+---
+
+这题解源自于LeetCode CN的[宫水三叶](https://leetcode.cn/u/ac_oier/)
+
+## DFS solution
+```java showLineNumbers
+class Solution {
+    HashSet<Integer> lookup = new HashSet<>();
+    public boolean findTarget(TreeNode root, int k) {
+        if (root == null)
+            return false;
+        
+        if (lookup.contains(k - root.val))
+            return true;
+        
+        lookup.add(root.val);
+        
+        // 这里会使用｜｜的目的是为了让程序得到root == null等于false的时候继续运行
+        // 否则将无法顺利继续游历整个二叉树
+        return findTarget(root.right, k) || findTarget(root.left, k);
+    }
+}
+```
+
+## Two Pointers and Deque
+```java {44, 45, 46, 47, 48, 49, 50} showLineNumbers
+class Solution {
+    public boolean findTarget(TreeNode root, int k) {
+        Deque<TreeNode> leftDeque = new ArrayDeque<>();
+        Deque<TreeNode> rightDeque = new ArrayDeque<>();
+        
+        TreeNode temp = root;
+        
+        while (temp != null) {
+            leftDeque.addLast(temp);
+            temp = temp.left;
+        }
+        
+        temp = root;
+        
+        while (temp != null) {
+            rightDeque.addLast(temp);
+            temp = temp.right;
+        }
+        
+        TreeNode left = leftDeque.peekLast();
+        TreeNode right = rightDeque.peekLast();
+        
+        while (left.val < right.val) {
+            System.out.println(left.val);
+            System.out.println(right.val);
+            if (left.val + right.val == k)
+                return true;
+            else if (left.val + right.val < k)
+                left = getNext(leftDeque, true);
+            else
+                right = getNext(rightDeque, false);
+            System.out.println("----");
+        }
+        
+        return false;
+    }
+    
+    public TreeNode getNext(Deque<TreeNode> d, boolean isLeft) {
+        // Why isLeft must pop the right node?
+        TreeNode node = isLeft 
+            ? d.pollLast().right 
+            : d.pollLast().left;
+        
+        while (node != null) {
+            // Why add the node at the last?
+            d.addLast(node);
+            node = isLeft 
+                ? node.left 
+                : node.right;
+        }
+
+        System.out.println("a" + d.peekLast().val);
+
+        return d.peekLast();
+    }
+}
+```

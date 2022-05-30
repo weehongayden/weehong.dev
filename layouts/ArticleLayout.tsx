@@ -24,15 +24,17 @@ const ArticleLayout: NextPage<{
           <h1 className="text-3xl tracking-tight font-extrabold sm:text-4xl">
             {title}
           </h1>
+          {description &&
           <div className="mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center">
             <h2 className="text-xl">{description}</h2>
             <Subscribe />
           </div>
+          }
         </div>
         <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
           {!contents.length && <h2 className="mb-4">No posts found.</h2>}
           {contents.map((content) => (
-            <ContentCard key={content.title} content={content} path="article" />
+            <ContentCard key={content.title} content={content} path={path} />
           ))}
         </div>
       </Container>
