@@ -196,7 +196,7 @@ pre {
 }
 
 pre span {
-  @apply w-screen text-base;
+  @apply w-full text-base;
 }
 
 :not(pre) > code {
