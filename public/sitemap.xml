@@ -9,6 +9,16 @@
   </url>
 
   <url>
-    <loc>https://weehong.dev/article/2022-05-21-pass-by-value-in-java</loc>
+    <loc>https://weehong.dev/review</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://weehong.dev/article/my-experience-to-grind-leetcode-and-review-regularly</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://weehong.dev/review/leetcode-653-two-sum-iv-input-is-a-bst</loc>
   </url>
 </urlset>

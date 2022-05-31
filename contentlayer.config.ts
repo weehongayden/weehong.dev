@@ -45,7 +45,7 @@ export const Review = defineDocumentType(() => ({
     title: { type: "string", required: true },
     publishedAt: { type: "string", required: true },
     isPublished: { type: "string", required: true },
-    description: { type: "string", required: false },
+    description: { type: "string", required: true },
     image: { type: "string" },
     tags: { type: "list", of: { type: "string" } },
   },
