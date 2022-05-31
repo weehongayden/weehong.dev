@@ -1,4 +1,3 @@
-import { pick } from "contentlayer/client";
 import type { Article } from "contentlayer/generated";
 import { allArticles } from "contentlayer/generated";
 import ArticleLayout from "layouts/ArticleLayout";
@@ -35,23 +34,9 @@ export function getStaticProps() {
       | "wordCount"
       | "readingTime"
     >
-  > = allArticles
-    .filter((article) => {
-      if (article.isPublished) {
-        return pick(article, [
-          "slug",
-          "title",
-          "description",
-          "publishedAt",
-          "wordCount",
-          "readingTime",
-        ]);
-      }
-    })
-    .sort(
-      (a, b) =>
-        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    );
+  > = allArticles.sort(
+    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+  );
 
   return { props: { articles } };
 }
