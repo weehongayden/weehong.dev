@@ -6,7 +6,7 @@ import { FC } from "react";
 const ContentLayout: FC<{ content: Review | Article }> = ({ content }) => {
   const Component = useMDXComponent(content.body.code);
   return (
-    <div className="relative px-4 pt-8 pb-20 overflow-hidden sm:items-start sm:px-6 lg:pt-16">
+    <div className="relative px-4 pt-8 pb-20 overflow-hidden items-start sm:px-6 lg:pt-16">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
         <div
           className="relative h-full text-lg max-w-prose mx-auto"

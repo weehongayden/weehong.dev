@@ -47,7 +47,7 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
           name="search"
           id="search"
           className="shadow-sm border-gray-300 focus:ring-transparent focus:border-blue-500 block w-full sm:text-sm rounded-md dark:border-gray-500 dark:focus:border-green-500 dark:text-white dark:bg-slate-900"
-          placeholder="Enter any text"
+          placeholder="Search content with any text"
           value={searchText}
           onChange={handleInputChange}
         />
