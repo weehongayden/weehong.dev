@@ -1,14 +1,16 @@
 import type { Article } from "contentlayer/generated";
 import { allArticles } from "contentlayer/generated";
 import ContentLayout from "layouts/ContentLayout";
-import Layout from "layouts/Layout";
 import { NextPage } from "next";
 
 const Content: NextPage<{ article: Article }> = ({ article }) => {
+  const meta = {
+    title: `${article.title} - Wee Hong KOH`,
+    description: article.description,
+    date: new Date(article.publishedAt).toISOString()
+  };
   return (
-    <Layout {...article}>
-      <ContentLayout content={article} />
-    </Layout>
+    <ContentLayout content={article} metas={meta} />
   );
 };
 

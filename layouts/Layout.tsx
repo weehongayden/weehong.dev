@@ -67,8 +67,8 @@ const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        {meta.publishedAt && (
-          <meta property="article:published_time" content={meta.publishedAt} />
+        {meta.date && (
+          <meta property="article:published_time" content={meta.date} />
         )}
         <meta
           name="theme-color"

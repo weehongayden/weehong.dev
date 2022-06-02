@@ -1,14 +1,16 @@
 import type { Review } from "contentlayer/generated";
 import { allReviews } from "contentlayer/generated";
 import ContentLayout from "layouts/ContentLayout";
-import Layout from "layouts/Layout";
 import { NextPage } from "next";
 
 const Content: NextPage<{ review: Review }> = ({ review }) => {
+  const meta = {
+    title: `${review.title} - Wee Hong KOH`,
+    description: review.description,
+    date: new Date(review.publishedAt).toISOString()
+  };
   return (
-    <Layout {...review}>
-      <ContentLayout content={review} />
-    </Layout>
+    <ContentLayout content={review} metas={meta} />
   );
 };
 
