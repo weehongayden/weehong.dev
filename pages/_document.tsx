@@ -30,6 +30,11 @@ const Document = () => {
           sizes="16x16"
           type="image/png"
         />
+        <meta name="google-site-verification" content="HX7MlwKp7Gy88gK3BTk3nA7HW7nCkRK2eM7IQoam7-0" />
+        <meta
+          content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+          name="robots"
+        />
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
