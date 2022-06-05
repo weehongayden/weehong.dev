@@ -17,6 +17,7 @@ const urls = [
     id: "article",
     name: "Article",
     href: "/article",
+    shortDescription: ""
   }
 ];
 
