@@ -81,7 +81,7 @@ const Home: NextPage<{ articles: Array<Article> }> = ({
                     <p className="text-xl font-semibold mb-3 dark:text-green-400">
                       {article.title}
                     </p>
-                    <span className="font-normal text-base text-slate-500 dark:text-gray-300">
+                    <span className="font-normal text-base text-slate-500 dark:text-gray-300 line-clamp-3">
                       {article.description}
                     </span>
                   </div>
