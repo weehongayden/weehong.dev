@@ -17,13 +17,7 @@ const urls = [
     id: "article",
     name: "Article",
     href: "/article",
-  },
-  {
-    id: "review",
-    name: "Review",
-    shortDescription: "LeetCode",
-    href: "/review",
-  },
+  }
 ];
 
 const Layout: FC<{ children: ReactNode; metas?: MetaProps | undefined }> = ({

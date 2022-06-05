@@ -37,24 +37,9 @@ export const Article = defineDocumentType(() => ({
   computedFields,
 }));
 
-export const Review = defineDocumentType(() => ({
-  name: "Review",
-  filePathPattern: "review/*.mdx",
-  contentType: "mdx",
-  fields: {
-    title: { type: "string", required: true },
-    publishedAt: { type: "string", required: true },
-    isPublished: { type: "string", required: true },
-    description: { type: "string", required: true },
-    image: { type: "string" },
-    tags: { type: "list", of: { type: "string" } },
-  },
-  computedFields,
-}));
-
 export default makeSource({
   contentDirPath: "data",
-  documentTypes: [Article, Review],
+  documentTypes: [Article],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

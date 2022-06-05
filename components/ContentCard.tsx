@@ -1,8 +1,8 @@
-import type { Article, Review } from "contentlayer/generated";
+import type { Article } from "contentlayer/generated";
 import Link from "next/link";
 import { FC } from "react";
 
-const ContentCard: FC<{ content: Article | Review; path: string }> = ({
+const ContentCard: FC<{ content: Article; path: string }> = ({
   content,
   path,
 }) => {

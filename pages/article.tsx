@@ -9,7 +9,7 @@ const Article: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
   const meta = {
     title: "Article - Wee Hong KOH",
     description:
-      "Wee Hong KOH constantly learning and reading from other platforms and people. This is the place he shares his thought, learning and insight on the programming, web technology, data structures and algorithms",
+      "This is the space that Wee Hong KOH shares his experience, learning, finding and insight while learning from work, people, project and study about programming, algorithms, web technology. It is also a documentation for himself.",
   };
   const [searchText, setSearchText] = useState("");
 

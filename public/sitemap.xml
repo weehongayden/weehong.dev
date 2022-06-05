@@ -9,16 +9,12 @@
   </url>
 
   <url>
-    <loc>https://weehong.dev/review</loc>
-  </url>
-
-  <url>
     <loc
       >https://weehong.dev/article/my-experience-to-grind-leetcode-and-review-regularly</loc
     >
   </url>
 
   <url>
-    <loc>https://weehong.dev/review/leetcode-653-two-sum-iv-input-is-a-bst</loc>
+    <loc>https://weehong.dev/sample/leetcode-653-two-sum-iv-input-is-a-bst</loc>
   </url>
 </urlset>

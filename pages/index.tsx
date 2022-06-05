@@ -1,16 +1,15 @@
 import Container from "components/Container";
 import { pick } from "contentlayer/client";
-import type { Article, Review } from "contentlayer/generated";
-import { allArticles, allReviews } from "contentlayer/generated";
+import type { Article } from "contentlayer/generated";
+import { allArticles } from "contentlayer/generated";
 import Layout from "layouts/Layout";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "styles/Home.module.css";
 
-const Home: NextPage<{ articles: Array<Article>; reviews: Array<Review> }> = ({
+const Home: NextPage<{ articles: Array<Article> }> = ({
   articles,
-  reviews,
 }) => {
   const metas = {
     title: "Wee Hong KOH - Software Engineer and Web Enthusiast",
@@ -100,48 +99,6 @@ const Home: NextPage<{ articles: Array<Article>; reviews: Array<Review> }> = ({
             </div>
           )}
         </div>
-        <div className="font-bold mt-14">
-          <h2 className="text-center md:text-left">Recent Published Review</h2>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {!reviews.length && <h3 className="mb-4">No content found.</h3>}
-            {reviews.map((review) => (
-              <Link href={`review/${review.slug}`} key={review.title}>
-                <a className="border border-2 rounded p-5">
-                  <div className="flex gap-2">
-                    {review.tags &&
-                      review.tags.map((tag: string, index: number) => {
-                        return (
-                          <span
-                            key={`${tag}-${index}`}
-                            className="bg-gray-500 rounded-full px-2 py-1 text-white dark:text-slate-900"
-                          >
-                            {tag}
-                          </span>
-                        );
-                      })}
-                  </div>
-                  <div className="block text-center sm:text-left">
-                    <p className="text-xl font-semibold mb-3 dark:text-green-400">
-                      {review.title}
-                    </p>
-                    <span className="font-normal text-base text-slate-500 dark:text-gray-300">
-                      {review.description}
-                    </span>
-                  </div>
-                </a>
-              </Link>
-            ))}
-          </div>
-          {articles.length > 0 && (
-            <div className="block text-center mt-8">
-              <Link href="/review">
-                <a className="text-lg text-centerfont-semibold text-blue-500 dark:text-green-400 hover:text-blue-600 hover:Dark:text-green-500">
-                  Read all reviews
-                </a>
-              </Link>
-            </div>
-          )}
-        </div>
       </Container>
     </Layout>
   );
@@ -177,32 +134,5 @@ export function getStaticProps() {
     )
     .slice(0, 2);
 
-  const reviews: Array<
-    Pick<
-      Review,
-      | "slug"
-      | "title"
-      | "description"
-      | "publishedAt"
-      | "wordCount"
-      | "readingTime"
-    >
-  > = allReviews
-    .map((review) =>
-      pick(review, [
-        "slug",
-        "title",
-        "description",
-        "publishedAt",
-        "wordCount",
-        "readingTime",
-      ])
-    )
-    .sort(
-      (a, b) =>
-        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    )
-    .slice(0, 2);
-
-  return { props: { articles, reviews } };
+  return { props: { articles } };
 }
