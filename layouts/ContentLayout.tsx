@@ -23,7 +23,8 @@ const ContentLayout: FC<{
         <ContentBackground />
         <div className="relative">
           <div className="text-lg max-w-prose mx-auto">
-            <h1 className="mt-2 block text-blue-500 text-3xl text-center leading-8 font-extrabold tracking-tight sm:text-4xl dark:text-green-500">
+            <span className="text-lg text-gray-500 dark:text-gray-300">{new Date(content.publishedAt).toISOString().slice(0, 10)  }</span>
+            <h1 className="mt-2 block text-blue-500 text-3xl text-center leading-8 font-extrabold tracking-tight sm:text-left sm:text-4xl dark:text-green-500">
               {content.title}
             </h1>
             <p className="mt-8 text-xl text-gray-500 dark:text-gray-300 leading-8">
