@@ -30,21 +30,21 @@ const ContentCard: FC<{ content: Article; path: string }> = ({
           <span className="text-sm ml-1">{content.readingTime.text}</span>
         </div>
       </div>
-      <div className="flex flex-wrap gap-2 my-3">
-        {content.tags &&
-          content.tags.map((tag: string, index: number) => {
-            return (
-              <span
-                key={`${tag}-${index}`}
-                className="bg-slate-900 rounded-full px-2 py-1 text-white dark:bg-gray-500"
-              >
-                {tag}
-              </span>
-            );
-          })}
-      </div>
       <div className="block">
-        <p className="text-xl font-semibold">{content.title}</p>
+        <p className="text-xl mt-3 font-semibold">{content.title}</p>
+        <div className="flex flex-wrap gap-2 my-3">
+          {content.tags &&
+            content.tags.map((tag: string, index: number) => {
+              return (
+                <span
+                  key={`${tag}-${index}`}
+                  className="bg-slate-900 rounded-full px-2 py-1 text-white dark:bg-gray-500"
+                >
+                  {tag}
+                </span>
+              );
+            })}
+        </div>
         <p className="mt-3 text-gray-500 dark:text-gray-300 text-base line-clamp-3">
           {content.description}
         </p>
