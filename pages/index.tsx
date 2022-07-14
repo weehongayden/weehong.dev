@@ -63,7 +63,7 @@ const Home: NextPage<{ articles: Array<Article> }> = ({
             {!articles.length && <h3 className="mb-4">No posts found.</h3>}
             {articles.map((article) => (
               <Link href={`article/${article.slug}`} key={article.title}>
-                <a className="border border-2 rounded p-5">
+                <a className="border border-2 rounded p-5 my-2 lg:my-0 sm:mx-2">
                   <div className="flex gap-2">
                     {article.tags &&
                       article.tags.map((tag: string, index: number) => {
