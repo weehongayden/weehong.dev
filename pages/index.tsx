@@ -8,9 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "styles/Home.module.css";
 
-const Home: NextPage<{ articles: Array<Article> }> = ({
-  articles,
-}) => {
+const Home: NextPage<{ articles: Array<Article> }> = ({ articles }) => {
   const metas = {
     title: "Wee Hong KOH - Software Engineer and Web Enthusiast",
     description:
@@ -59,11 +57,11 @@ const Home: NextPage<{ articles: Array<Article> }> = ({
         </div>
         <div className="font-bold mt-14">
           <h2 className="text-center md:text-left">Recent Published Article</h2>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {!articles.length && <h3 className="mb-4">No posts found.</h3>}
             {articles.map((article) => (
               <Link href={`article/${article.slug}`} key={article.title}>
-                <a className="border border-2 rounded p-5 my-2 lg:my-0 sm:mx-2">
+                <a className="border border-2 rounded p-5">
                   <div className="flex gap-2">
                     {article.tags &&
                       article.tags.map((tag: string, index: number) => {
